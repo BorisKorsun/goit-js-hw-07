@@ -25,6 +25,8 @@ function createGalleryList(arr) {
 
 const galleryMarkup = createGalleryList(galleryItems);
 
+console.log(galleryMarkup)
+
 refs.galleryRef.insertAdjacentHTML('beforeend', galleryMarkup);
 
 let gallery = new SimpleLightbox('.gallery a', {

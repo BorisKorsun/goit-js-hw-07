@@ -39,36 +39,21 @@ function onGalleryImageClick(e) {
         return;
     };
 
-    const modal = basicLightbox.create(`
-        <img src="${image.dataset.source}" width="800" height="600">
-    `);
-
-    modal.show();
-    console.log('function completed');
+    modalShow(image.dataset.source)
 };
 
+function modalShow (src) {
+    const modal = basicLightbox.create(`
+        <div class="modal">
+         <img src="${src}" width="800" height="600">
+        </div>
+    `);
+    modal.show();
 
-// function createGalleryList(array) {
-//     return array
-//     .map(({ preview, original, description }) => {
-//         const div = document.createElement('div');
-//         div.classList.add('gallery__item');
-
-//         const link = document.createElement('a');
-//         link.classList.add('gallery__link');
-//         link.href = original;
-//         div.appendChild(link);
-
-//         const image = document.createElement('img');
-//         image.classList.add('gallery__image');
-//         image.src = preview;
-//         image.dataset.source = original;
-//         image.alt = description;
-//         link.appendChild(image);
-
-//         refs.galleryRef.appendChild(div)
-//     })
-// };
+    if(image.nodeName === 'IMG') {
+        modal.show()
+    };
+}
 
 
 
