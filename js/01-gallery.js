@@ -39,18 +39,18 @@ function onGalleryImageClick(e) {
         return;
     };
 
-    modalShow(image.dataset.source)
+    modalShow(image)
 };
 
-function modalShow (src) {
+function modalShow (item) {
     const modal = basicLightbox.create(`
         <div class="modal">
-         <img src="${src}" width="800" height="600">
+         <img src="${item.dataset.source}" width="800" height="600">
         </div>
     `);
     modal.show();
 
-    if(image.nodeName === 'IMG') {
+    if(item.nodeName === 'IMG') {
         modal.show()
     };
 }
